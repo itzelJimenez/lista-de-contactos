@@ -11,6 +11,7 @@ var cargarPagina = function(){
 	 $enviar.click(enviarDatos);
 	 $enviar.click(limpiarInputs);
 	 $enviar.click(contContactos);
+	 $("#search-form").submit(filtrarContactos);
 };
 
 var enviarDatos = function(){
@@ -18,7 +19,7 @@ var enviarDatos = function(){
 	var $contactos = $('#contactos');
 
 	//Creación de contenedores
-	var $item = $('<li/>', {'class': 'collection-item avatar'});
+	var $item = $('<li/>', {'class': 'collection-item avatar contactos'});
 
 		var $icono = $('<img>', {'class': 'circle blue contactImage'});
 		$icono.attr('src', 'imgs/dian.ico');
@@ -57,7 +58,11 @@ var contContactos=function(){
 	var $noNombres=$('.title').length;
 	$contactos.text($noNombres);
 }
-
+var filtrarContactos = function(e){
+	e.preventDefault();
+	var contenidoBarra = $("#search").val();
+	console.log(contenidoBarra);
+}
 $(document).ready(cargarPagina);     
 }) ();
 
