@@ -10,51 +10,51 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
-		<section class="container">
-			<ul class="collection with-header col offset-l2" id="contactos">
+		<section class="container col s12">
+			<ul class="collection with-header col s12 offset-l2" id="contactos">
 				<li class="collection-header center-align light-blue">
 					<a href="#!"><i class=" large material-icons white-text">contact_phone</i></a>
 				</li>
 				<li href="#!" class="collection-item active  light-blue">Número de Contactos: <span id="contacts">3</span></li>
-				<li class="collection-item">
-				      <form id="search-form">
+				<li class="collection-item row">
+				      <form id="search-form" class="col s9">
 				        <div class="input-field">
 				          <input id="search" type="search" required>
 				          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
 				          <i class="material-icons">close</i>
 				        </div>
 				      </form>
+				      <section id="add" class="col s3">
+			  			<div class="">
+			   	 			<a class="btn-floating btn-large light-blue" href="#modalContact">
+			      				<i class="large material-icons">add</i>
+			    			</a>
+			    		</div>
+			    	</section>
 				</li>
 			    <li class="collection-item avatar contactos">
-			      <img class="circle blue contactImage" src="imgs/user.png" />
+			      <a href="#llamando"><img class="circle blue contactImage" src="imgs/user.png" /></a>
 			      <span class="title">Itzel Jiménez</span>
 			      <p>55362594 </p>
 			      <p>ittsspy@gmail.com</p>
-			      <a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+			      <a href="#editar" class="secondary-content"><i class="material-icons">mode_edit</i></a>
 			    </li>
 			    <li class="collection-item avatar contactos">
-			      <img class="circle blue contactImage" src="imgs/user.png" />
+			      <a href="#llamando"><img class="circle blue contactImage" src="imgs/user.png" /></a>
 			      <span class="title">Juan Pérez</span>
 			      <p>4455998891 </p>
 			       <p>hola@juan.com</p>
-			      <a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+			      <a href="#editar" class="secondary-content"><i class="material-icons">mode_edit</i></a>
 			    </li>
 			    <li class="collection-item avatar contactos">
-			      <img class="circle blue contactImage" src="imgs/user.png" />
+			      <a href="#llamando"><img class="circle blue contactImage" src="imgs/user.png" /></a>
 			      <span class="title">Lupita Salas</span>
 			      <p>5566442244 </p>
 			       <p> hola@lupe.com</p>
-			      <a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+			      <a href="#editar" class="secondary-content"><i class="material-icons">mode_edit</i></a>
 			    </li>
 			</ul>
 		</section>
-		<section id="add">
-  			<div class="fixed-action-btn">
-   	 			<a class="btn-floating btn-large light-blue" href="#modalContact">
-      				<i class="large material-icons">add</i>
-    			</a>
-    		</div>
-    	</section>
     	<section id="modalContact" class="modal">
 		    <div class="modal-content">
 			    <h3>Nuevo Contacto</h3>
@@ -85,19 +85,31 @@
 				          <label for="email">Correo electrónico:</label>
 				        </div>
 				    </div>
-				    <div class="row">
-				        <div class="input-field col s12">
-				          <i class="material-icons prefix">mode_edit</i>
-				          <textarea id="detalles" class="materialize-textarea"></textarea>
-				          <label for="detalles">Detalles:</label>
-				        </div>
-				      </div>
-				    </form>
-				  </div>
 			</div>
 			<div class="modal-footer">
 				<a href="#!" id="send" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
 				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+			</div>
+		</section>
+		<section id="llamando" class="modal">
+			<div class="modal-content">	
+				<div class="row center-align">
+			    		<img src="imgs/user.png" class="img-user">
+		    	</div>
+				<div class="row center-align">
+						<h4>Llamando</h4>
+			    		<img src="imgs/llamando.gif" class="img-user">
+		    	</div>
+			    <div class="row">
+			      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat col s6 center-align"><img src="imgs/altavoz.png" class="img-llamada"></a>
+			      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat col s6 center-align"><img src="imgs/colgar.ico" class="img-llamada"></a>
+			    </div>
+			</div>
+		</section>
+		<section id="editar" class="modal">
+			<div class="modal-content">	
+			    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat col s6 center-align light-blue white-text ">Editar</a>
+			    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat col s6 center-align light-blue white-text" id="eliminar">Eliminar</a>
 			</div>
 		</section>
 		<script src="js/jquery-3.2.1.min.js"></script>
