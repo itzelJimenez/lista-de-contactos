@@ -5,12 +5,13 @@ var $nombre = $('#nombre');
 var $apellido = $('#apellidos');
 var $telefono = $('#telefono');
 var $correo = $('#email');
-
+var $btnEliminar =('#eliminar')
 var cargarPagina = function(){
 	 $('.modal').modal();
 	 $enviar.click(enviarDatos);
 	 $enviar.click(limpiarInputs);
 	 $enviar.click(contContactos);
+	 $eliminar.click();
 	 $("#search-form").submit(filtrarContactos);
 };
 
@@ -21,8 +22,11 @@ var enviarDatos = function(){
 	//Creación de contenedores
 	var $item = $('<li/>', {'class': 'collection-item avatar contactos'});
 
-		var $icono = $('<img>', {'class': 'circle blue contactImage'});
-		$icono.attr('src', 'imgs/dian.ico');
+		var $modalLlamada = $('<a>');
+		$modalLlamada.attr('href', '#llamando');
+			var $icono = $('<img>', {'class': 'circle blue contactImage'});
+			$icono.attr('src', 'imgs/user.png');
+			$modalLlamada.append($icono);
 
 		var $span = $('<span/>', {'class': 'title'});
 		$span.append($nombre.val() + " " + $apellido.val());
@@ -36,7 +40,7 @@ var enviarDatos = function(){
 		$editar.attr('href', '#modalEditar');
 		var $iconoEditar = $('<i class="material-icons">mode_edit</i>');
 		$editar.append($iconoEditar);
-	$item.append($icono);
+	$item.append($modalLlamada);
 	$item.append($span);
 	$item.append($contNumero);
 	$item.append($contCorreo);
